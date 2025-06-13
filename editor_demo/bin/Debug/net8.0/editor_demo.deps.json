@@ -1,0 +1,360 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "editor_demo/1.0.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "TXTextControl.TextControl.ASP.SDK": "33.0.1",
+          "TXTextControl.Web": "33.1.0"
+        },
+        "runtime": {
+          "editor_demo.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "Microsoft.NETCore.Targets/1.1.0": {},
+      "Microsoft.Win32.SystemEvents/6.0.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "System.Drawing.Common/6.0.0": {
+        "dependencies": {
+          "Microsoft.Win32.SystemEvents": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/System.Drawing.Common.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "unix",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          },
+          "runtimes/win/lib/net6.0/System.Drawing.Common.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "System.Drawing.Primitives/4.3.0": {
+        "dependencies": {
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
+        }
+      },
+      "System.Runtime/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
+        }
+      },
+      "System.Runtime.Extensions/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
+        }
+      },
+      "TXTextControl.TextControl.ASP.SDK/33.0.1": {
+        "dependencies": {
+          "System.Drawing.Common": "6.0.0"
+        },
+        "runtime": {
+          "lib/net8.0/TXBarcode.dll": {
+            "assemblyVersion": "33.0.900.500",
+            "fileVersion": "33.0.900.500"
+          },
+          "lib/net8.0/TXDocumentServer.Web.DocumentViewer.dll": {
+            "assemblyVersion": "33.0.400.500",
+            "fileVersion": "33.0.401.500"
+          },
+          "lib/net8.0/TXDocumentServer.dll": {
+            "assemblyVersion": "33.0.1900.500",
+            "fileVersion": "33.0.1901.500"
+          },
+          "lib/net8.0/TXDrawing.dll": {
+            "assemblyVersion": "33.0.900.500",
+            "fileVersion": "33.0.900.500"
+          },
+          "lib/net8.0/TXTextControl.Server.dll": {
+            "assemblyVersion": "33.0.1800.500",
+            "fileVersion": "33.0.1801.500"
+          },
+          "lib/net8.0/TXTextControl.dll": {
+            "assemblyVersion": "33.0.2600.500",
+            "fileVersion": "33.0.2601.500"
+          },
+          "lib/net8.0/txpdf.dll": {
+            "assemblyVersion": "33.0.2000.500",
+            "fileVersion": "33.0.2001.500"
+          }
+        },
+        "resources": {
+          "lib/net8.0/de/TXBarcode.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/de/TXDocumentServer.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/de/TXDrawing.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net8.0/de/TXTextControl.resources.dll": {
+            "locale": "de"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/tx33.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.3301.500"
+          },
+          "runtimes/win-x64/native/tx33_css.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.1100.500"
+          },
+          "runtimes/win-x64/native/tx33_doc.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.840.500"
+          },
+          "runtimes/win-x64/native/tx33_dox.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.440.500"
+          },
+          "runtimes/win-x64/native/tx33_htm.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.1300.500"
+          },
+          "runtimes/win-x64/native/tx33_ic.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.1700.500"
+          },
+          "runtimes/win-x64/native/tx33_pdf.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.101.500"
+          },
+          "runtimes/win-x64/native/tx33_rtf.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.840.500"
+          },
+          "runtimes/win-x64/native/tx33_tls.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.1600.500"
+          },
+          "runtimes/win-x64/native/tx33_xlx.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.800.500"
+          },
+          "runtimes/win-x64/native/tx33_xml.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.1000.500"
+          },
+          "runtimes/win-x64/native/txdomprs.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.100.500"
+          },
+          "runtimes/win-x64/native/txsvggen.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "33.0.100.500"
+          },
+          "runtimes/win-x86/native/tx33.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.3301.500"
+          },
+          "runtimes/win-x86/native/tx33_css.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.1100.500"
+          },
+          "runtimes/win-x86/native/tx33_doc.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.840.500"
+          },
+          "runtimes/win-x86/native/tx33_dox.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.440.500"
+          },
+          "runtimes/win-x86/native/tx33_htm.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.1300.500"
+          },
+          "runtimes/win-x86/native/tx33_ic.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.1700.500"
+          },
+          "runtimes/win-x86/native/tx33_pdf.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.101.500"
+          },
+          "runtimes/win-x86/native/tx33_rtf.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.840.500"
+          },
+          "runtimes/win-x86/native/tx33_tls.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.1600.500"
+          },
+          "runtimes/win-x86/native/tx33_xlx.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.800.500"
+          },
+          "runtimes/win-x86/native/tx33_xml.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.1000.500"
+          },
+          "runtimes/win-x86/native/txdomprs.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.100.500"
+          },
+          "runtimes/win-x86/native/txsvggen.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "33.0.100.500"
+          }
+        }
+      },
+      "TXTextControl.Web/33.1.0": {
+        "dependencies": {
+          "System.Drawing.Primitives": "4.3.0"
+        },
+        "runtime": {
+          "lib/net8.0/TXTextControl.Web.DocumentEditor.dll": {
+            "assemblyVersion": "33.0.1.0",
+            "fileVersion": "33.0.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "editor_demo/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
+      "path": "microsoft.netcore.targets/1.1.0",
+      "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
+    },
+    "Microsoft.Win32.SystemEvents/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hqTM5628jSsQiv+HGpiq3WKBl2c8v1KZfby2J6Pr7pEPlK9waPdgEO6b8A/+/xn/yZ9ulv8HuqK71ONy2tg67A==",
+      "path": "microsoft.win32.systemevents/6.0.0",
+      "hashPath": "microsoft.win32.systemevents.6.0.0.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "System.Drawing.Common/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NfuoKUiP2nUWwKZN6twGqXioIe1zVD0RIj2t976A+czLHr2nY454RwwXs6JU9Htc6mwqL6Dn/nEL3dpVf2jOhg==",
+      "path": "system.drawing.common/6.0.0",
+      "hashPath": "system.drawing.common.6.0.0.nupkg.sha512"
+    },
+    "System.Drawing.Primitives/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1QU/c35gwdhvj77fkScXQQbjiVAqIL3fEYn/19NE0CV/ic5TN5PyWAft8HsrbRd4SBLEoErNCkWSzMDc0MmbRw==",
+      "path": "system.drawing.primitives/4.3.0",
+      "hashPath": "system.drawing.primitives.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
+      "path": "system.runtime/4.3.0",
+      "hashPath": "system.runtime.4.3.0.nupkg.sha512"
+    },
+    "System.Runtime.Extensions/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
+      "path": "system.runtime.extensions/4.3.0",
+      "hashPath": "system.runtime.extensions.4.3.0.nupkg.sha512"
+    },
+    "TXTextControl.TextControl.ASP.SDK/33.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OfxsxZ9ewc04RwM9XEIKAwxa0TGt/M7NovxKrqcAanEypjk5MSBRbuz7NKuQMBqOY5ombGQKShd37zWqgmbBmA==",
+      "path": "txtextcontrol.textcontrol.asp.sdk/33.0.1",
+      "hashPath": "txtextcontrol.textcontrol.asp.sdk.33.0.1.nupkg.sha512"
+    },
+    "TXTextControl.Web/33.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2WQt+eQO0UkfpnrsAkcXPm/ASmx2YS7mmxitfsPZcqT/uuhd44hjbA1KANW4wC5nidu/P6lYG3iHJ8RzVOeQ0w==",
+      "path": "txtextcontrol.web/33.1.0",
+      "hashPath": "txtextcontrol.web.33.1.0.nupkg.sha512"
+    }
+  }
+}
