@@ -13,17 +13,65 @@
         @{
             // string jsonData = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/Documents/acme_data.json"));
         }
-
-        @Html.TXTextControl().TextControl(settings =>
+        @if (ViewBag.TemplateLoaded == true)
         {
-                // settings.ServiceAddress = IPAddress.Parse(System.Configuration.ConfigurationManager.AppSettings["ServiceAddress"]);
-                settings.Dock = TXTextControl.Web.DockStyle.Fill;
-        }).LoadText(ViewBag.TemplateDocument,TXTextControl.Web.StringStreamType.RichTextFormat).Render()
+            @Html.TXTextControl().TextControl().LoadText(ViewBag.TemplateDocument, TXTextControl.Web.StringStreamType.HTMLFormat).Render()
+        }
+        else
+        {
+            <div class="alert alert-danger m-3">
+                <h6>Error Loading Template</h6>
+                <p>@ViewBag.ErrorMessage</p>
+                <p>Please ensure the template file exists at: <code>Documents/order.rtf</code></p>
+            </div>
+        }
+        @* @Html.TXTextControl().TextControl().LoadText(ViewBag.TemplateDocument,TXTextControl.Web.StringStreamType.RichTextFormat).Render() *@
     </div>
-    <!-- Info area -->
-    <div class="alert alert-info mt-3" role="alert"></div>
-
-    <button onclick="Merge()" class="btn mt-3 btn-success">With Dynamic Sections</button>
-    <button onclick="Reset()" class="btn mt-3 btn-outline-warning">Reload Template</button>
-
+    <div class="mt-3">
+        <button onclick="Merge()" class="btn mt-3 btn-success">Merge Data</button>
+        <button onclick="Reset()" class="btn mt-3 btn-outline-warning">Reload Template</button>
+    </div>
+    <button type="button" class="btn btn-info btn-block mt-3" onclick="getMergeFields()">
+        <i class="fas fa-list"></i> Show Merge Fields
+    </button>
+    <h6>Available Merge Fields:</h6>
+    <div id="merge-fields-list">
+        <small class="text-muted">Loading...</small>
+    </div>
 </div>
+
+@* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
+<script>
+
+    function getMergeFields() {
+        fetch('/Home/GetMergeFields', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const fieldsList = document.getElementById('merge-fields-list');
+                if (data.fields.length > 0) {
+                    fieldsList.innerHTML = data.fields.map(field =>
+                        `<span class="badge badge-secondary mr-1 mb-1">${field}</span>`
+                    ).join('');
+                } else {
+                    fieldsList.innerHTML = '<small class="text-muted">No merge fields found</small>';
+                }
+                showMessage('Merge fields loaded!', 'success');
+            } else {
+                showMessage('Error getting merge fields: ' + data.error, 'error');
+            }
+        })
+        .catch(error => {
+            showMessage('Error: ' + error.message, 'error');
+        });
+    }
+    function resetToTemplate() {
+        showMessage('Resetting to original template...', 'info');
+        window.location.reload();
+    }
+</script>
