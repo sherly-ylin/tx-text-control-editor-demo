@@ -81,7 +81,7 @@ namespace editor_demo.Controllers
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
                     tx.Save(out documentContent, TXTextControl.StringStreamType.RichTextFormat);
-
+                    Console.WriteLine(documentContent);
                     // Pass the document content to the view
                     ViewBag.TemplateDocument = documentContent;
                     ViewBag.TemplateLoaded = true;

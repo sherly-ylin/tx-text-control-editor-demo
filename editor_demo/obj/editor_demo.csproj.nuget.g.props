@@ -14,8 +14,1108 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <EmbeddedResource Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.asp.sdk\33.0.1\contentFiles\any\any\txtextcontrol.server.license" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.asp.sdk\33.0.1\contentFiles\any\any\txtextcontrol.server.license')">
-      <NuGetPackageId>TXTextControl.TextControl.ASP.SDK</NuGetPackageId>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Alegreya-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Alegreya-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Alegreya-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Alegreya-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Alegreya-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Alegreya-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Alegreya-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Alegreya-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Aleo-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Aleo-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Aleo-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Aleo-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Aleo-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Aleo-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Aleo-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Aleo-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Assistant-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Assistant-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Assistant-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Assistant-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\DMSerifText-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\DMSerifText-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\DMSerifText-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\DMSerifText-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\DMSerifText-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\DMSerifText-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\DMSerifText-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\DMSerifText-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Black.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Black.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Black.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Black.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-BlackItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-BlackItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-BlackItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-BlackItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Light.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Light.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Light.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Light.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-LightItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-LightItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-LightItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-LightItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Thin.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-Thin.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-Thin.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-Thin.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-ThinItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Lato-ThinItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Lato-ThinItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Lato-ThinItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationMono-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationMono-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationMono-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationMono-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationMono-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationMono-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationMono-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationMono-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationMono-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSans-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSans-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSans-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSans-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSans-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSans-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSans-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSans-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSans-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSansNarrow-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSansNarrow-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSansNarrow-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSansNarrow-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSansNarrow-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSansNarrow-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSansNarrow-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSansNarrow-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSansNarrow-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSerif-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSerif-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSerif-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSerif-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSerif-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSerif-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\LiberationSerif-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\LiberationSerif-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\LiberationSerif-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Black.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Black.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-Black.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-Black.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-BlackItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-BlackItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-BlackItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-BlackItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Light.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Light.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-Light.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-Light.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-LightItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-LightItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-LightItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-LightItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Merriweather-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Merriweather-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Merriweather-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\MerriweatherSans-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\MerriweatherSans-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\MerriweatherSans-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\MerriweatherSans-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\MerriweatherSans-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\MerriweatherSans-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\MerriweatherSans-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\MerriweatherSans-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Montserrat-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Montserrat-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Montserrat-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Montserrat-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Montserrat-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Montserrat-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Montserrat-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Montserrat-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSans-Italic-VariableFont_wdth,wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSans-VariableFont_wdth,wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSans-VariableFont_wdth,wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSans-VariableFont_wdth,wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSans-VariableFont_wdth,wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansJP-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansJP-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSansJP-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSansJP-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansKR-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansKR-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSansKR-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSansKR-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansSC-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansSC-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSansSC-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSansSC-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansSymbols2-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansSymbols2-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSansSymbols2-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSansSymbols2-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansTC-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\NotoSansTC-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\NotoSansTC-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\NotoSansTC-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Nunito-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Nunito-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Nunito-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Nunito-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Nunito-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Nunito-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Nunito-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Nunito-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\OpenSans-Italic-VariableFont_wdth,wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\OpenSans-Italic-VariableFont_wdth,wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\OpenSans-Italic-VariableFont_wdth,wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\OpenSans-Italic-VariableFont_wdth,wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\OpenSans-VariableFont_wdth,wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\OpenSans-VariableFont_wdth,wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\OpenSans-VariableFont_wdth,wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\OpenSans-VariableFont_wdth,wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Oswald-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Oswald-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Oswald-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Oswald-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\PTSans-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\PTSans-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\PTSans-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\PTSans-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\PTSans-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\PTSans-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\PTSans-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\PTSans-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\PTSans-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Pacifico-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Pacifico-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Pacifico-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Pacifico-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Black.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Black.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Black.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Black.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-BlackItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-BlackItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-BlackItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-BlackItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraBold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraBold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-ExtraBold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-ExtraBold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraBoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraBoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-ExtraBoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-ExtraBoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraLight.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraLight.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-ExtraLight.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-ExtraLight.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraLightItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ExtraLightItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-ExtraLightItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-ExtraLightItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Light.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Light.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Light.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Light.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-LightItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-LightItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-LightItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-LightItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Medium.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Medium.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Medium.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Medium.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-MediumItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-MediumItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-MediumItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-MediumItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-SemiBold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-SemiBold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-SemiBold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-SemiBold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-SemiBoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-SemiBoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-SemiBoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-SemiBoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Thin.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-Thin.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-Thin.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-Thin.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ThinItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Prompt-ThinItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Prompt-ThinItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Prompt-ThinItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Raleway-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Raleway-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Raleway-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Raleway-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Raleway-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Raleway-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Raleway-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Raleway-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Black.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Black.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Black.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Black.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-BlackItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-BlackItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-BlackItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-BlackItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Bold.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Bold.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Bold.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Bold.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-BoldItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-BoldItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-BoldItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-BoldItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Italic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Italic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Italic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Italic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Light.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Light.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Light.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Light.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-LightItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-LightItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-LightItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-LightItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Medium.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Medium.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Medium.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Medium.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-MediumItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-MediumItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-MediumItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-MediumItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Thin.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-Thin.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-Thin.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-Thin.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-ThinItalic.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Roboto-ThinItalic.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Roboto-ThinItalic.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Roboto-ThinItalic.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Slabo27px-Regular.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\Slabo27px-Regular.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\Slabo27px-Regular.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\Slabo27px-Regular.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\SourceSans3-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\SourceSans3-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\SourceSans3-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\SourceSans3-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\SourceSans3-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\SourceSans3-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\SourceSans3-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\SourceSans3-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\WorkSans-Italic-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\WorkSans-Italic-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\WorkSans-Italic-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\WorkSans-Italic-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\WorkSans-VariableFont_wght.ttf" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\WorkSans-VariableFont_wght.ttf')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\WorkSans-VariableFont_wght.ttf</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\WorkSans-VariableFont_wght.ttf</Link>
+    </None>
+    <None Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\licenses.txt" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\Fonts\licenses.txt')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
+      <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
+      <NuGetItemType>None</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Fonts\licenses.txt</TargetPath>
+      <DestinationSubDirectory>Fonts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>Fonts\licenses.txt</Link>
+    </None>
+    <EmbeddedResource Include="$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\txtextcontrol.server.license" Condition="Exists('$(NuGetPackageRoot)txtextcontrol.textcontrol.core.sdk\33.0.1\contentFiles\any\any\txtextcontrol.server.license')">
+      <NuGetPackageId>TXTextControl.TextControl.Core.SDK</NuGetPackageId>
       <NuGetPackageVersion>33.0.1</NuGetPackageVersion>
       <NuGetItemType>EmbeddedResource</NuGetItemType>
       <Pack>false</Pack>
@@ -24,6 +1124,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <PkgTXTextControl_TextControl_ASP_SDK Condition=" '$(PkgTXTextControl_TextControl_ASP_SDK)' == '' ">C:\Users\ylin\.nuget\packages\txtextcontrol.textcontrol.asp.sdk\33.0.1</PkgTXTextControl_TextControl_ASP_SDK>
+    <PkgTXTextControl_TextControl_Core_SDK Condition=" '$(PkgTXTextControl_TextControl_Core_SDK)' == '' ">C:\Users\ylin\.nuget\packages\txtextcontrol.textcontrol.core.sdk\33.0.1</PkgTXTextControl_TextControl_Core_SDK>
   </PropertyGroup>
 </Project>

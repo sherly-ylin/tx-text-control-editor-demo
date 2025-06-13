@@ -1,0 +1,15 @@
+[
+  {
+    "CustomerName": "SalesChain LLC",
+    "ShippingAddress": "61 Mattatuck Heights Rd, Waterbury, CT 06705",
+    "OrderDate": "2025-06-13",
+    "OrderItems": [
+      {
+        "ProductName": "Widget",
+        "Quantity": 2,
+        "Price": 45.0,
+        "Total": 90.0
+      }
+    ]
+  }
+]

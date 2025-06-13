@@ -55,11 +55,15 @@
               "target": "Package",
               "version": "[13.0.3, )"
             },
-            "TXTextControl.TextControl.ASP.SDK": {
+            "TXTextControl.TextControl.Core.SDK": {
               "target": "Package",
               "version": "[33.0.1, )"
             },
             "TXTextControl.Web": {
+              "target": "Package",
+              "version": "[33.1.0, )"
+            },
+            "TXTextControl.Web.DocumentViewer": {
               "target": "Package",
               "version": "[33.1.0, )"
             }

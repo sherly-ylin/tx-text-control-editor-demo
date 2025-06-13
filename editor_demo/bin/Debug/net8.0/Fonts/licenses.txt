@@ -1,0 +1,4 @@
+All fonts included in this project are licensed under the SIL Open Font License, Version 1.1. This license allows the fonts to be used, studied, modified, and redistributed freely as long as they are not sold by themselves. The fonts may be embedded, bundled, or redistributed with other software, as long as no modifications are made to the license text.
+
+For full license details, please refer to the SIL Open Font License, Version 1.1:
+https://openfontlicense.org

@@ -6,98 +6,24 @@
 
 @* @Html.Raw(ViewBag.Document) *@
 
-<div>
-     @if (ViewBag.TemplateLoaded == true)
-    {
-        <div class="alert alert-success">
-            <small><strong>Template Status:</strong> Loaded successfully</small>
-        </div>
+<div class="demo">
 
-        <div>
-   
-            @Html.TXTextControl().TextControl(settings => {
-                // settings.Width = "100%";
-                // settings.Height = "600px";
-                settings.UserNames = new string[] { "Editor User" };
-                settings.Dock = TXTextControl.Web.DockStyle.Fill;
-            }).LoadText("Documents/order.rtf", TXTextControl.Web.StreamType.RichTextFormat).Render()
-            @* .LoadText(ViewBag.TemplateDocument, TXTextControl.Web.StringStreamType.RichTextFormat).Render() *@
-    
-        </div>
-       
-        <button type="button" class="btn btn-primary btn-block mb-2" onclick="reloadTemplate()">
-            Reload Template
-        </button>
-    }
-    else
-    {
-        <div class="alert alert-warning">
-            <small><strong>Template Status:</strong> Failed to load</small>
-        </div>
-         <div class="alert alert-danger m-3">
-            <h6>Error Loading Template</h6>
-            <p>@ViewBag.ErrorMessage</p>
-            <p>Please ensure the template file exists at: <code>Documents/order.rtf</code></p>
-        </div>                   
-        <button type="button" class="btn btn-primary btn-block mb-2" onclick="loadTemplate()">
-            Load Template
-        </button>
-    }
-</div>
+    <div class="tx-container">
 
-
-
-
-<script>
-     function loadTemplate() {
-        showMessage('Loading template...', 'info');
-
-        fetch('/Home/LoadTemplate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                // Load the document into TX Text Control
-                TXTextControl.loadDocument(TXTextControl.streamType.InternalUnicode, data.document);
-                showMessage('Template loaded successfully!', 'success');
-            } else {
-                showMessage('Error loading template: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
-        });
-    }
-</script>
-@* @{
-    var sDocument = "<html><body><p>Welcome to <strong>Text Control</strong></p></body></html>";
-} 
-
-@Html.TXTextControl().TextControl(settings => {
-settings.UserNames = new string[] { "Tim Typer" };
-}).LoadText(sDocument, TXTextControl.Web.StringStreamType.HTMLFormat).Render() *@
-
-@* 
-@Html.TXTextControl().TextControl().LoadText("Documents/demo.rtf", TXTextControl.Web.StreamType.RichTextFormat).Render()
-
-<input type="button" onclick="insertTable()" value="Insert Table" />
-
-<script>
-    function insertTable() {
-        TXTextControl.tables.add(5, 5, 10, function(e) {
-        if (e === true) { // if added
-            TXTextControl.tables.getItem(function(table) {
-            table.cells.forEach(function(cell) {
-
-                cell.setText("Cell text");
-
-            });
-            }, null, 10);
+        @{
+            // string jsonData = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/Documents/acme_data.json"));
         }
-        })
-    }
-</script> *@
+
+        @Html.TXTextControl().TextControl(settings =>
+        {
+                // settings.ServiceAddress = IPAddress.Parse(System.Configuration.ConfigurationManager.AppSettings["ServiceAddress"]);
+                settings.Dock = TXTextControl.Web.DockStyle.Fill;
+        }).LoadText(ViewBag.TemplateDocument,TXTextControl.Web.StringStreamType.RichTextFormat).Render()
+    </div>
+    <!-- Info area -->
+    <div class="alert alert-info mt-3" role="alert"></div>
+
+    <button onclick="Merge()" class="btn mt-3 btn-success">With Dynamic Sections</button>
+    <button onclick="Reset()" class="btn mt-3 btn-outline-warning">Reload Template</button>
+
+</div>
