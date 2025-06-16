@@ -2,6 +2,20 @@
 {
     public class Order
     {
+        public Order()
+        {
+            CustomerName = string.Empty;
+            ShippingAddress = string.Empty;
+            OrderDate = DateTime.Now;
+            OrderItems = new List<OrderItem>();
+        }
+        public Order(string customerName, string shippingAddress, DateTime orderDate)
+        {
+            CustomerName = customerName;
+            ShippingAddress = shippingAddress;
+            OrderDate = orderDate;
+            OrderItems = new List<OrderItem>();
+        }
         public string CustomerName { get; set; }
         public string ShippingAddress { get; set; }
         public DateTime OrderDate { get; set; }

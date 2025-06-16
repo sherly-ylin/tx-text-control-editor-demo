@@ -50,34 +50,6 @@
 @* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
 
-    function getMergeFields() {
-        fetch('/Home/GetMergeFields', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                const fieldsList = document.getElementById('merge-fields-list');
-                if (data.fields.length > 0) {
-                    fieldsList.innerHTML = data.fields.map(field =>
-                        `<span class="badge badge-secondary mr-1 mb-1">${field}</span>`
-                    ).join('');
-                } else {
-                    fieldsList.innerHTML = '<small class="text-muted">No merge fields found</small>';
-                }
-                showMessage('Merge fields loaded!', 'success');
-            } else {
-                showMessage('Error getting merge fields: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
-        });
-    }
-
     function resetToTemplate() {
         showMessage('Resetting to original template...', 'info');
         window.location.reload();
@@ -89,7 +61,7 @@
         // Get the content from TX Text Control
         var content = TXTextControl.getHTML();
 
-        fetch('/Home/SaveDocumentJson', {
+        fetch('/Home/SaveDocument', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

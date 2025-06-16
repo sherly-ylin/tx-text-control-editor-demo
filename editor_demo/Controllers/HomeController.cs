@@ -1,9 +1,11 @@
 using editor_demo.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Data;
 using System.Diagnostics;
 using TXTextControl;
 using TXTextControl.DocumentServer;
+
 
 namespace editor_demo.Controllers
 {
@@ -24,23 +26,24 @@ namespace editor_demo.Controllers
                 {
                     tx.Create();
 
-                    // Load settings for merge fields
                     TXTextControl.LoadSettings ls = new TXTextControl.LoadSettings()
                     {
                         ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord
                     };
 
-                    // Load the template
                     tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
+
+                    SNOrder dbOrder = GetOrderFromDb(7262);
+                    Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
 
                     using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
                     {
                         Order order = GetSampleData();
                         var orders = new List<Order> { order };
-
+                        mailMerge.FormFieldMergeType = FormFieldMergeType.Replace;
                         mailMerge.MergeObjects(orders);
                     }
-                
+
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
                     tx.Save(out documentContent, TXTextControl.StringStreamType.HTMLFormat);
@@ -48,6 +51,10 @@ namespace editor_demo.Controllers
                     // Pass the document content to the view
                     ViewBag.TemplateDocument = documentContent;
                     ViewBag.TemplateLoaded = true;
+
+                    // save document as PDF
+                    byte[] document;
+                    tx.Save(out document, TXTextControl.BinaryStreamType.AdobePDF);
                 }
             }
             catch (Exception ex)
@@ -80,7 +87,7 @@ namespace editor_demo.Controllers
                     tx.Load(htmlContent, TXTextControl.StringStreamType.HTMLFormat);
 
                     // Save back to the original template file
-                    tx.Save("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML);
+                    tx.Save("Documents/output.docx", TXTextControl.StreamType.WordprocessingML);
 
                     return Json(new { success = true, message = "Document saved successfully!" });
                 }
@@ -123,6 +130,84 @@ namespace editor_demo.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
+        public SNOrder GetOrderFromDb(int orderId)
+        {
+            var order = new SNOrder();
+
+            string connectionString = "Server=192.168.20.97;Database=SalesChain0602_MS_MN;User Id=ylin;Password=9244@Wahg;TrustServerCertificate=True;";
+            DataTable resultTable = new DataTable();
+            
+            using (var conn = new Microsoft.Data.SqlClient.SqlConnection(connectionString))
+            {
+                conn.Open();
+                try
+                {
+                    var query = @"SELECT * FROM SNOrder o 
+                                JOIN SNOrderLine ol on o.OrderId = ol.OrderId
+                                WHERE o.OrderId = @OrderId";
+                    var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn);
+
+                    cmd.Parameters.AddWithValue("@OrderId", orderId);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        resultTable.Load(reader);
+                        Console.WriteLine(resultTable.Rows.Count);
+                    }
+                    if (resultTable.Rows.Count > 0)
+                    {
+                        // Assuming the first row contains the order info
+                        var row = resultTable.Rows[0];
+                        order.CustomerName = row["CustomerName"].ToString();
+                        order.BillingAddress = row["BillingAddress1"].ToString() + ", " +
+                                              row["BillingAddress2"].ToString() + ", " +
+                                              row["BillingCity"].ToString() + ", " +
+                                              row["BillingState"].ToString() + " " +
+                                              row["BillingPostalCode"].ToString();
+                        order.DTCreated = Convert.ToDateTime(row["DTCreated"]);
+
+                        // Loop through all rows to get order items
+                        foreach (DataRow itemRow in resultTable.Rows)
+                        {
+                            order.OrderLines.Add(new OrderLine
+                            {
+                                Model = itemRow["Model"].ToString(),
+                                Quantity = Convert.ToInt32(itemRow["Quantity"]),
+                                SellPrice = Convert.ToDecimal(itemRow["SellPrice"]),
+                                LineTotal = Convert.ToDecimal(itemRow["LineTotal"])
+                            });
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exception (log or rethrow as needed)
+                    throw new Exception("Error retrieving order info: " + ex.Message, ex);
+                }
+
+                // // Get order items
+                // using (var cmd = new Microsoft.Data.SqlClient.SqlCommand("SELECT ProductName, Quantity, Price, Total FROM OrderItems WHERE OrderId = @OrderId", conn))
+                // {
+                //     cmd.Parameters.AddWithValue("@OrderId", orderId);
+                //     using (var reader = cmd.ExecuteReader())
+                //     {
+                //         while (reader.Read())
+                //         {
+                //             order.OrderItems.Add(new OrderItem
+                //             {
+                //                 ProductName = reader.GetString(0),
+                //                 Quantity = reader.GetInt32(1),
+                //                 Price = reader.GetDecimal(2),
+                //                 Total = reader.GetDecimal(3)
+                //             });
+                //         }
+                //     }
+                // }
+            }
+
+            return order;
+        }
+
+
         private Order GetSampleData()
         {
             return new Order
