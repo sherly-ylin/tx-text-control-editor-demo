@@ -6,7 +6,7 @@
         public string ShippingAddress { get; set; }
         public DateTime OrderDate { get; set; }
         public List<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-        public decimal GrandTotal { get; set; }
+        public decimal GrandTotal => OrderItems.Sum(item => item.Total);
     }
 
     public class OrderItem

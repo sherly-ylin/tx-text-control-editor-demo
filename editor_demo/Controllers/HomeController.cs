@@ -31,8 +31,16 @@ namespace editor_demo.Controllers
                     };
 
                     // Load the template
-                    tx.Load("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML, ls);
+                    tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
 
+                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+                    {
+                        Order order = GetSampleData();
+                        var orders = new List<Order> { order };
+
+                        mailMerge.MergeObjects(orders);
+                    }
+                
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
                     tx.Save(out documentContent, TXTextControl.StringStreamType.HTMLFormat);
