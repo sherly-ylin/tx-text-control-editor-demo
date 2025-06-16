@@ -29,7 +29,6 @@ C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\editor_d.0079749C.Up2Date
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\editor_demo.dll
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\obj\Debug\net8.0\refint\editor_demo.dll

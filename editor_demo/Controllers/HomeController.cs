@@ -31,7 +31,7 @@ namespace editor_demo.Controllers
                     };
 
                     // Load the template
-                    tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
+                    tx.Load("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML, ls);
 
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
@@ -49,6 +49,40 @@ namespace editor_demo.Controllers
             }
             return View();
         }
+
+        // Save the document back to the original file
+        [HttpPost]
+        public IActionResult SaveDocument()
+        {
+            try
+            {
+                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
+                {
+                    tx.Create();
+
+                    // Get the HTML content from the editor
+                    string htmlContent = Request.Form["textcontrol"];
+
+                    if (string.IsNullOrEmpty(htmlContent))
+                    {
+                        return Json(new { success = false, error = "No content to save" });
+                    }
+
+                    // Load the HTML content into ServerTextControl
+                    tx.Load(htmlContent, TXTextControl.StringStreamType.HTMLFormat);
+
+                    // Save back to the original template file
+                    tx.Save("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML);
+
+                    return Json(new { success = true, message = "Document saved successfully!" });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
         // Get available merge fields from the template
         [HttpPost]
         public IActionResult GetMergeFields()
@@ -64,7 +98,7 @@ namespace editor_demo.Controllers
                         ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord
                     };
 
-                    tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
+                    tx.Load("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML, ls);
 
                     // Get all application fields (merge fields)
                     var fields = new List<string>();
