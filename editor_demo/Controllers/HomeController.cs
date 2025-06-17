@@ -28,20 +28,25 @@ namespace editor_demo.Controllers
 
                     TXTextControl.LoadSettings ls = new TXTextControl.LoadSettings()
                     {
-                        ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord
+                        ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord,
+                        LoadSubTextParts = true
                     };
 
-                    tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
-
-                    SNOrder dbOrder = GetOrderFromDb(7262);
-                    Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
-
+                    
                     using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
-                    {
-                        Order order = GetSampleData();
-                        var orders = new List<Order> { order };
+                    {   
+                        // tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
+                        tx.Load("Documents/template_order.docx", TXTextControl.StreamType.WordprocessingML, ls);
+
+                        SNOrder dbOrder = GetOrderFromDb(7262);
+                        var dbOrders = new List<SNOrder> { dbOrder };
+                        Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
+
+                        // Order order = GetSampleData();
+                        // var orders = new List<Order> { order };
+
                         mailMerge.FormFieldMergeType = FormFieldMergeType.Replace;
-                        mailMerge.MergeObjects(orders);
+                        mailMerge.MergeObjects(dbOrders);
                     }
 
                     // Convert to format that can be loaded in the editor
@@ -97,46 +102,13 @@ namespace editor_demo.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
-
-        // Get available merge fields from the template
-        [HttpPost]
-        public IActionResult GetMergeFields()
-        {
-            try
-            {
-                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
-                {
-                    tx.Create();
-
-                    TXTextControl.LoadSettings ls = new TXTextControl.LoadSettings()
-                    {
-                        ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord
-                    };
-
-                    tx.Load("Documents/template2.docx", TXTextControl.StreamType.WordprocessingML, ls);
-
-                    // Get all application fields (merge fields)
-                    var fields = new List<string>();
-                    foreach (TXTextControl.ApplicationField field in tx.ApplicationFields)
-                    {
-                        fields.Add(field.Name);
-                    }
-
-                    return Json(new { success = true, fields = fields });
-                }
-            }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, error = ex.Message });
-            }
-        }
         public SNOrder GetOrderFromDb(int orderId)
         {
             var order = new SNOrder();
 
             string connectionString = "Server=192.168.20.97;Database=SalesChain0602_MS_MN;User Id=ylin;Password=9244@Wahg;TrustServerCertificate=True;";
             DataTable resultTable = new DataTable();
-            
+
             using (var conn = new Microsoft.Data.SqlClient.SqlConnection(connectionString))
             {
                 conn.Open();
@@ -151,18 +123,17 @@ namespace editor_demo.Controllers
                     using (var reader = cmd.ExecuteReader())
                     {
                         resultTable.Load(reader);
-                        Console.WriteLine(resultTable.Rows.Count);
+                        Console.WriteLine("Total results rows: " + resultTable.Rows.Count);
                     }
                     if (resultTable.Rows.Count > 0)
                     {
-                        // Assuming the first row contains the order info
                         var row = resultTable.Rows[0];
                         order.CustomerName = row["CustomerName"].ToString();
                         order.BillingAddress = row["BillingAddress1"].ToString() + ", " +
-                                              row["BillingAddress2"].ToString() + ", " +
-                                              row["BillingCity"].ToString() + ", " +
-                                              row["BillingState"].ToString() + " " +
-                                              row["BillingPostalCode"].ToString();
+                            (string.IsNullOrEmpty(row["BillingAddress2"].ToString()) ? "" : row["BillingAddress2"].ToString() + ", ") +
+                            row["BillingCity"].ToString() + ", " +
+                            row["BillingState"].ToString() + " " +
+                            row["BillingPostalCode"].ToString();
                         order.DTCreated = Convert.ToDateTime(row["DTCreated"]);
 
                         // Loop through all rows to get order items
@@ -234,6 +205,51 @@ namespace editor_demo.Controllers
                         }
                     }
             };
+        }
+
+        [HttpPost]
+        public IActionResult GenerateDBOrderDocument(int orderId)
+        {
+            try
+            {
+                // Get the order from the database
+                SNOrder dbOrder = GetOrderFromDb(orderId);
+                Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
+
+                // Define paths for template and output document
+                string templatePath = "Documents/template_order.docx";
+                string outputPath = $"Documents/SNOrder_{orderId}.docx";
+
+                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
+                {
+                    tx.Create();
+
+                    // Load the template document
+                    var loadSettings = new LoadSettings
+                    {
+                        ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
+                    };
+                    tx.Load(templatePath, TXTextControl.StreamType.WordprocessingML, loadSettings);
+
+                    // Perform mail merge with the SNOrder object
+                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+                    {
+                        mailMerge.MergeObject(dbOrder);
+                    }
+                    // Return merged document
+                    string mergedDocument = "";
+                    tx.Save(out mergedDocument, TXTextControl.StringStreamType.HTMLFormat);
+                    ViewBag.TemplateDocument = mergedDocument;
+                    // Save the generated document
+                    tx.Save(outputPath, TXTextControl.StreamType.WordprocessingML);
+                    return Json(new { success = true, message = "Document generated successfully!", filePath = outputPath });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
         }
         static void GenerateOrderDocument(Order order, string templatePath, string outputPath)
         {
