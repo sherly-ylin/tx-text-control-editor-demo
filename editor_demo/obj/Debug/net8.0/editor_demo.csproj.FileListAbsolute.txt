@@ -42,7 +42,6 @@ C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\runtimes\win-x64\native\txdomprs.dll
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\runtimes\win-x64\native\txsvggen.dll
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\Newtonsoft.Json.dll
-C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\Documents\sample_order.json
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\Fonts\Alegreya-Italic-VariableFont_wght.ttf
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\Fonts\Alegreya-VariableFont_wght.ttf
 C:\Users\ylin\SalesChain Save\2025\Document Generation Process\Prototype\editor_demo\editor_demo\bin\Debug\net8.0\Fonts\Aleo-Italic-VariableFont_wght.ttf

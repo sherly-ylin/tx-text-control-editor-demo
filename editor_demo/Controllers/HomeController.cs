@@ -32,9 +32,9 @@ namespace editor_demo.Controllers
                         LoadSubTextParts = true
                     };
 
-                    
+
                     using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
-                    {   
+                    {
                         // tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
                         tx.Load("Documents/template_order.docx", TXTextControl.StreamType.WordprocessingML, ls);
 
@@ -45,10 +45,11 @@ namespace editor_demo.Controllers
                         // Order order = GetSampleData();
                         // var orders = new List<Order> { order };
 
-                        mailMerge.FormFieldMergeType = FormFieldMergeType.Replace;
-                        mailMerge.MergeObjects(dbOrders);
-                    }
-
+                        mailMerge.FormFieldMergeType = FormFieldMergeType.None;
+                        mailMerge.MergeObject(dbOrder);
+                        // mailMerge.MergeObjects(dbOrder.OrderLines);
+                        // mailMerge.MergeObjects(dbOrders);
+                    }                
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
                     tx.Save(out documentContent, TXTextControl.StringStreamType.HTMLFormat);
@@ -128,6 +129,7 @@ namespace editor_demo.Controllers
                     if (resultTable.Rows.Count > 0)
                     {
                         var row = resultTable.Rows[0];
+                        order.OrderID = Convert.ToInt32(row["OrderID"]);
                         order.CustomerName = row["CustomerName"].ToString();
                         order.BillingAddress = row["BillingAddress1"].ToString() + ", " +
                             (string.IsNullOrEmpty(row["BillingAddress2"].ToString()) ? "" : row["BillingAddress2"].ToString() + ", ") +
@@ -141,6 +143,8 @@ namespace editor_demo.Controllers
                         {
                             order.OrderLines.Add(new OrderLine
                             {
+                                OrderLineID = Convert.ToInt32(itemRow["OrderLineID"]),
+                                BundleID = Convert.ToInt32(itemRow["BundleID"]),
                                 Model = itemRow["Model"].ToString(),
                                 Quantity = Convert.ToInt32(itemRow["Quantity"]),
                                 SellPrice = Convert.ToDecimal(itemRow["SellPrice"]),
@@ -208,7 +212,7 @@ namespace editor_demo.Controllers
         }
 
         [HttpPost]
-        public IActionResult GenerateDBOrderDocument(int orderId)
+        public IActionResult GenerateDBOrderDocument(int orderId, string templatePath, string outputPath)
         {
             try
             {
@@ -217,8 +221,8 @@ namespace editor_demo.Controllers
                 Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
 
                 // Define paths for template and output document
-                string templatePath = "Documents/template_order.docx";
-                string outputPath = $"Documents/SNOrder_{orderId}.docx";
+                templatePath = "Documents/template_order.docx";
+                outputPath = $"Documents/SNOrder_{orderId}.docx";
 
                 using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
                 {

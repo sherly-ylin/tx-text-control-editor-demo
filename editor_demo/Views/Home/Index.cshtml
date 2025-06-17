@@ -36,10 +36,10 @@
                 <i class="fas fa-save"></i> Save As...
             </button>
             <button onclick="generateDBOrderDocument(7262)" class="btn btn-success">
-                <i class="fas fa-database"></i> Loading DB Data
+                <i class="fas fa-database"></i> Load Order 7262
             </button>
-            <button onclick="Reset()" class="btn btn-outline-warning">
-                <i class="fas fa-undo"></i> Load sample data
+            <button onclick="generateDBOrderDocument(7262, true)" class="btn btn-outline-warning">
+                <i class="fas fa-undo"></i> Load Order body bundle
             </button>
         </div>
     </div>
@@ -48,7 +48,7 @@
 
 @* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
-    function generateDBOrderDocument(orderId) {
+    function generateDBOrderDocument(orderId, byBundle = false) {
         showMessage('Generating document...', 'info');
 
         fetch('/Home/GenerateDBOrderDocument', {
@@ -56,7 +56,7 @@
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ orderId: orderId})
+            body: JSON.stringify({ orderId: orderId, byBundle: byBundle})
         })
         .then(response => response.json())
         .then(data => {
