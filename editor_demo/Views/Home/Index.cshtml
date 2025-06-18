@@ -35,7 +35,7 @@
             <button onclick="showSaveAsDialog()" class="btn btn-secondary">
                 <i class=""></i> Save As...
             </button>
-            <button onclick="generateDBOrderDocument(7262)" class="btn btn-success">
+            <button onclick="performMailMerge()" class="btn btn-success">
                 <i class=""></i> Load Order 7262
             </button>
             <button onclick="reset()" class="btn btn-warning">
@@ -52,12 +52,8 @@
 @* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
      function performMailMerge() {
-        // Update status badge
-        document.getElementById('document-status').textContent = 'Merging...';
-        document.getElementById('document-status').className = 'badge badge-warning';
-        
         // Get current document content from the editor
-        TXTextControl.saveDocument(TXTextControl.streamType.InternalUnicodeFormat, function(e) {
+        TXTextControl.saveDocument(TXTextControl.streamType.HTMLFormat, function(e) {
             const requestData = {
                 DocumentContent: e.data
             };
@@ -76,24 +72,14 @@
                     console.log(data.document);
                     TXTextControl.loadDocument(TXTextControl.streamType.HTMLFormat, data.document);
                     showMessage('Mail merge completed successfully! Template fields have been replaced with actual data.', 'success');
-                    
-                    // Update status badge
-                    document.getElementById('document-status').textContent = 'Merged Document';
-                    document.getElementById('document-status').className = 'badge badge-success';
+
                 } else {
                     showMessage('Error during mail merge: ' + data.error, 'error');
-                    
-                    // Reset status badge
-                    document.getElementById('document-status').textContent = 'Template View';
-                    document.getElementById('document-status').className = 'badge badge-info';
+
                 }
             })
             .catch(error => {
                 showMessage('Error: ' + error.message, 'error');
-                
-                // Reset status badge
-                document.getElementById('document-status').textContent = 'Template View';
-                document.getElementById('document-status').className = 'badge badge-info';
             });
         });
     }
