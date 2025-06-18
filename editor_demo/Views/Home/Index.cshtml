@@ -35,7 +35,7 @@
             <button onclick="showSaveAsDialog()" class="btn btn-secondary">
                 <i class=""></i> Save As...
             </button>
-            <button onclick="generateDBOrderDocument(7262)" class="btn btn-success">
+            <button onclick="mergeOrder(7262)" class="btn btn-success">
                 <i class=""></i> Load Order 7262
             </button>
             <button onclick="reset()" class="btn btn-warning">
@@ -51,6 +51,27 @@
 
 @* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
+    function mergeOrder(orderId){
+         fetch('/Home/MergeOrderData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `orderId=${orderId}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Update editor with merged HTML
+                console.log(data.mergedHtml);
+                TXTextControl.loadDocument(data.mergedHtml, TXTextControl.StreamType.HTMLFormat);
+                
+            } else {
+                alert("Error: " + data.error);
+            }
+        });
+    }
+
     @* function generateDBOrderDocument(orderId, byBundle = false) {
         showMessage('Generating document...', 'info');
 

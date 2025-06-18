@@ -205,6 +205,43 @@ namespace editor_demo.Controllers
             return documentContent;
         }
 
+        [HttpPost]
+        public IActionResult MergeOrderData(int orderId)
+        {
+            try
+            {
+                using (ServerTextControl tx = new ServerTextControl())
+                {
+                    tx.Create();
+
+                    // Load the template
+                    var loadSettings = new LoadSettings
+                    {
+                        ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
+                        LoadSubTextParts = true
+                    };
+                    tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, loadSettings);
+
+                    // Merge the data
+                    SNOrder dbOrder = GetOrderFromDb(orderId);
+                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+                    {
+                        mailMerge.FormFieldMergeType = FormFieldMergeType.None;
+                        mailMerge.MergeObject(dbOrder);
+                    }
+
+                    // Return merged HTML to update editor
+                    string mergedHtml = "";
+                    tx.Save(out mergedHtml, StringStreamType.HTMLFormat);
+                    return Json(new { success = true, mergedHtml });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
+
 
         [HttpPost]
         public IActionResult GenerateDBOrderDocument(int orderId, string templatePath, string outputPath)
