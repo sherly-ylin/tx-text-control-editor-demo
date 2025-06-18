@@ -51,53 +51,7 @@
 
 @* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
-     function performMailMerge() {
-        // Update status badge
-        document.getElementById('document-status').textContent = 'Merging...';
-        document.getElementById('document-status').className = 'badge badge-warning';
-        
-        // Get current document content from the editor
-        TXTextControl.saveDocument(TXTextControl.streamType.InternalUnicodeFormat, function(e) {
-            const requestData = {
-                DocumentContent: e.data
-            };
-            
-            fetch('/Home/PerformMailMerge', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(requestData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // Load merged document back into editor
-                    console.log(data.document);
-                    TXTextControl.loadDocument(TXTextControl.streamType.HTMLFormat, data.document);
-                    showMessage('Mail merge completed successfully! Template fields have been replaced with actual data.', 'success');
-                    
-                    // Update status badge
-                    document.getElementById('document-status').textContent = 'Merged Document';
-                    document.getElementById('document-status').className = 'badge badge-success';
-                } else {
-                    showMessage('Error during mail merge: ' + data.error, 'error');
-                    
-                    // Reset status badge
-                    document.getElementById('document-status').textContent = 'Template View';
-                    document.getElementById('document-status').className = 'badge badge-info';
-                }
-            })
-            .catch(error => {
-                showMessage('Error: ' + error.message, 'error');
-                
-                // Reset status badge
-                document.getElementById('document-status').textContent = 'Template View';
-                document.getElementById('document-status').className = 'badge badge-info';
-            });
-        });
-    }
-    function generateDBOrderDocument(orderId, byBundle = false) {
+    @* function generateDBOrderDocument(orderId, byBundle = false) {
         showMessage('Generating document...', 'info');
 
         fetch('/Home/GenerateDBOrderDocument', {
@@ -111,8 +65,6 @@
         .then(data => {
             if (data.success) {
                 showMessage(data.message, 'success');
-                // Optionally redirect to the generated document
-                @* window.location.href = data.filePath; *@
             } else {
                 showMessage('Error generating document: ' + data.error, 'error');
             }
@@ -120,7 +72,7 @@
         .catch(error => {
             showMessage('Error: ' + error.message, 'error');
         });
-    }
+    } *@
     function resetToTemplate() {
         showMessage('Resetting to original template...', 'info');
         window.location.reload();
@@ -143,54 +95,6 @@
         .then(data => {
             if (data.success) {
                 showMessage(data.message, 'success');
-            } else {
-                showMessage('Error saving document: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
-        });
-    }
-
-    // Function to show the Save As dialog
-    function showSaveAsDialog() {
-        $('#saveAsModal').modal('show');
-        $('#fileName').val(''); // Clear the input
-    }
-
-    // Function to save the document with a new name
-    function saveDocumentAs() {
-        var fileName = document.getElementById('fileName').value.trim();
-
-        if (!fileName) {
-            showMessage('Please enter a filename', 'error');
-            return;
-        }
-
-        if (!fileName.endsWith('.docx')) {
-            fileName += '.docx';
-        }
-
-        showMessage('Saving document as ' + fileName + '...', 'info');
-
-        // Get the content from TX Text Control
-        var content = TXTextControl.getHTML();
-
-        fetch('/Home/SaveDocumentAs', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                content: content,
-                fileName: fileName
-            })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showMessage(data.message, 'success');
-                $('#saveAsModal').modal('hide');
             } else {
                 showMessage('Error saving document: ' + data.error, 'error');
             }

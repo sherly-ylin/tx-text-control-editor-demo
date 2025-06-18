@@ -205,41 +205,7 @@ namespace editor_demo.Controllers
             return documentContent;
         }
 
-        [HttpPost]
-        public IActionResult PerformMailMerge([FromBody] MailMergeRequest request)
-        {
-            try
-            {
-                using (ServerTextControl tx = new ServerTextControl())
-                {
-                    tx.Create();
 
-                    // Load the current document from the editor
-                    if (!string.IsNullOrEmpty(request.DocumentContent))
-                    {
-                        tx.Load(request.DocumentContent, StringStreamType.HTMLFormat);
-                        Console.WriteLine("Document loaded successfully.");
-                        Console.WriteLine(request.DocumentContent);
-                    }
-                    else
-                    {
-                        // Load template if no document content provided
-                        LoadSettings ls = new LoadSettings()
-                        {
-                            ApplicationFieldFormat = ApplicationFieldFormat.MSWord
-                        };
-                        tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, ls);
-                    }
-                    string mergedDocument = MergeData(tx);
-
-                    return Json(new { success = true, document = mergedDocument });
-                }
-            }
-            catch (Exception ex)
-            {
-                return Json(new { success = false, error = ex.Message });
-            }
-        }
         [HttpPost]
         public IActionResult GenerateDBOrderDocument(int orderId, string templatePath, string outputPath)
         {
@@ -300,10 +266,5 @@ namespace editor_demo.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-        // Request models
-    public class MailMergeRequest
-    {
-        public string DocumentContent { get; set; }
-        public object MergeData { get; set; }
-    }
+
 }
