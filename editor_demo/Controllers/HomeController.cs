@@ -22,45 +22,34 @@ namespace editor_demo.Controllers
         {
             try
             {
-                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
+                using (ServerTextControl tx = new ServerTextControl())
                 {
                     tx.Create();
 
-                    TXTextControl.LoadSettings ls = new TXTextControl.LoadSettings()
+                    LoadSettings ls = new LoadSettings()
                     {
-                        ApplicationFieldFormat = TXTextControl.ApplicationFieldFormat.MSWord,
+                        ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
                         LoadSubTextParts = true
                     };
 
+                    tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, ls);
 
-                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
-                    {
-                        // tx.Load("Documents/template.docx", TXTextControl.StreamType.WordprocessingML, ls);
-                        tx.Load("Documents/template_order.docx", TXTextControl.StreamType.WordprocessingML, ls);
+                    // string mergedDoc = "";
+                    // mergedDoc = MergeData(tx);
+                    // // Pass the document content to the view
+                    // ViewBag.TemplateDocument = mergedDoc;
+                    // ViewBag.TemplateLoaded = true;
 
-                        SNOrder dbOrder = GetOrderFromDb(7262);
-                        var dbOrders = new List<SNOrder> { dbOrder };
-                        Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
-
-                        // Order order = GetSampleData();
-                        // var orders = new List<Order> { order };
-
-                        mailMerge.FormFieldMergeType = FormFieldMergeType.None;
-                        mailMerge.MergeObject(dbOrder);
-                        // mailMerge.MergeObjects(dbOrder.OrderLines);
-                        // mailMerge.MergeObjects(dbOrders);
-                    }                
                     // Convert to format that can be loaded in the editor
                     string documentContent = "";
-                    tx.Save(out documentContent, TXTextControl.StringStreamType.HTMLFormat);
-
+                    tx.Save(out documentContent, StringStreamType.HTMLFormat);
                     // Pass the document content to the view
                     ViewBag.TemplateDocument = documentContent;
                     ViewBag.TemplateLoaded = true;
 
-                    // save document as PDF
-                    byte[] document;
-                    tx.Save(out document, TXTextControl.BinaryStreamType.AdobePDF);
+                    // // save document as PDF
+                    // byte[] document;
+                    // tx.Save(out document, TXTextControl.BinaryStreamType.AdobePDF);
                 }
             }
             catch (Exception ex)
@@ -77,7 +66,7 @@ namespace editor_demo.Controllers
         {
             try
             {
-                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
+                using (ServerTextControl tx = new ServerTextControl())
                 {
                     tx.Create();
 
@@ -90,10 +79,10 @@ namespace editor_demo.Controllers
                     }
 
                     // Load the HTML content into ServerTextControl
-                    tx.Load(htmlContent, TXTextControl.StringStreamType.HTMLFormat);
+                    tx.Load(htmlContent, StringStreamType.HTMLFormat);
 
                     // Save back to the original template file
-                    tx.Save("Documents/output.docx", TXTextControl.StreamType.WordprocessingML);
+                    tx.Save("Documents/output.docx", StreamType.WordprocessingML);
 
                     return Json(new { success = true, message = "Document saved successfully!" });
                 }
@@ -117,7 +106,8 @@ namespace editor_demo.Controllers
                 {
                     var query = @"SELECT * FROM SNOrder o 
                                 JOIN SNOrderLine ol on o.OrderId = ol.OrderId
-                                WHERE o.OrderId = @OrderId";
+                                WHERE o.OrderId = @OrderId
+                                ORDER BY ol.BundleID, Model";
                     var cmd = new Microsoft.Data.SqlClient.SqlCommand(query, conn);
 
                     cmd.Parameters.AddWithValue("@OrderId", orderId);
@@ -159,58 +149,97 @@ namespace editor_demo.Controllers
                     throw new Exception("Error retrieving order info: " + ex.Message, ex);
                 }
 
-                // // Get order items
-                // using (var cmd = new Microsoft.Data.SqlClient.SqlCommand("SELECT ProductName, Quantity, Price, Total FROM OrderItems WHERE OrderId = @OrderId", conn))
-                // {
-                //     cmd.Parameters.AddWithValue("@OrderId", orderId);
-                //     using (var reader = cmd.ExecuteReader())
-                //     {
-                //         while (reader.Read())
-                //         {
-                //             order.OrderItems.Add(new OrderItem
-                //             {
-                //                 ProductName = reader.GetString(0),
-                //                 Quantity = reader.GetInt32(1),
-                //                 Price = reader.GetDecimal(2),
-                //                 Total = reader.GetDecimal(3)
-                //             });
-                //         }
-                //     }
-                // }
+                finally
+                {
+                    conn.Close();
+                }
             }
 
             return order;
         }
 
 
-        private Order GetSampleData()
-        {
-            return new Order
-            {
-                CustomerName = "John Doe",
-                ShippingAddress = "123 Main St., Springfield, IL 62701",
-                OrderDate = DateTime.Parse("2025-06-13"),
+        // private Order GetSampleData()
+        // {
+        //     return new Order
+        //     {
+        //         CustomerName = "John Doe",
+        //         ShippingAddress = "123 Main St., Springfield, IL 62701",
+        //         OrderDate = DateTime.Parse("2025-06-13"),
 
-                OrderItems = new List<OrderItem>
-                    {
-                        new OrderItem
-                        {
-                            ProductName = "Widget",
-                            Quantity = 2,
-                            Price = 45.00m,
-                            Total = 90.00m
-                        },
-                        new OrderItem
-                        {
-                            ProductName = "Gadget",
-                            Quantity = 1,
-                            Price = 78.45m,
-                            Total = 78.45m
-                        }
-                    }
-            };
+        //         OrderItems = new List<OrderItem>
+        //             {
+        //                 new OrderItem
+        //                 {
+        //                     ProductName = "Widget",
+        //                     Quantity = 2,
+        //                     Price = 45.00m,
+        //                     Total = 90.00m
+        //                 },
+        //                 new OrderItem
+        //                 {
+        //                     ProductName = "Gadget",
+        //                     Quantity = 1,
+        //                     Price = 78.45m,
+        //                     Total = 78.45m
+        //                 }
+        //             }
+        //     };
+        // }
+        public string MergeData(ServerTextControl tx)
+        {
+            using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+            {
+                SNOrder dbOrder = GetOrderFromDb(7262);
+                var dbOrders = new List<SNOrder> { dbOrder };
+                Console.WriteLine(JsonConvert.SerializeObject(dbOrder));
+
+                mailMerge.FormFieldMergeType = FormFieldMergeType.None;
+                mailMerge.MergeObject(dbOrder);
+            }
+            // Convert to format that can be loaded in the editor
+            string documentContent = "";
+            tx.Save(out documentContent, StringStreamType.HTMLFormat);
+
+
+            return documentContent;
         }
 
+        [HttpPost]
+        public IActionResult PerformMailMerge([FromBody] MailMergeRequest request)
+        {
+            try
+            {
+                using (ServerTextControl tx = new ServerTextControl())
+                {
+                    tx.Create();
+
+                    // Load the current document from the editor
+                    if (!string.IsNullOrEmpty(request.DocumentContent))
+                    {
+                        tx.Load(request.DocumentContent, StringStreamType.HTMLFormat);
+                        Console.WriteLine("Document loaded successfully.");
+                        Console.WriteLine(request.DocumentContent);
+                    }
+                    else
+                    {
+                        // Load template if no document content provided
+                        LoadSettings ls = new LoadSettings()
+                        {
+                            ApplicationFieldFormat = ApplicationFieldFormat.MSWord
+                        };
+                        tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, ls);
+                    }
+                    string mergedDocument = MergeData(tx);
+
+                    return Json(new { success = true, document = mergedDocument });
+                }
+            }
+            catch (Exception ex)
+            {
+                return Json(new { success = false, error = ex.Message });
+            }
+        }
         [HttpPost]
         public IActionResult GenerateDBOrderDocument(int orderId, string templatePath, string outputPath)
         {
@@ -224,7 +253,7 @@ namespace editor_demo.Controllers
                 templatePath = "Documents/template_order.docx";
                 outputPath = $"Documents/SNOrder_{orderId}.docx";
 
-                using (TXTextControl.ServerTextControl tx = new TXTextControl.ServerTextControl())
+                using (ServerTextControl tx = new ServerTextControl())
                 {
                     tx.Create();
 
@@ -233,7 +262,7 @@ namespace editor_demo.Controllers
                     {
                         ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
                     };
-                    tx.Load(templatePath, TXTextControl.StreamType.WordprocessingML, loadSettings);
+                    tx.Load(templatePath, StreamType.WordprocessingML, loadSettings);
 
                     // Perform mail merge with the SNOrder object
                     using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
@@ -242,10 +271,10 @@ namespace editor_demo.Controllers
                     }
                     // Return merged document
                     string mergedDocument = "";
-                    tx.Save(out mergedDocument, TXTextControl.StringStreamType.HTMLFormat);
+                    tx.Save(out mergedDocument, StringStreamType.HTMLFormat);
                     ViewBag.TemplateDocument = mergedDocument;
                     // Save the generated document
-                    tx.Save(outputPath, TXTextControl.StreamType.WordprocessingML);
+                    tx.Save(outputPath, StreamType.WordprocessingML);
                     return Json(new { success = true, message = "Document generated successfully!", filePath = outputPath });
 
                 }
@@ -255,28 +284,11 @@ namespace editor_demo.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
-        static void GenerateOrderDocument(Order order, string templatePath, string outputPath)
+        static void DownloadDocument(ServerTextControl tx, string outputPath)
         {
-            using (ServerTextControl tx = new ServerTextControl())
-            {
-                tx.Create();
-
-                var loadSettings = new LoadSettings
-                {
-                    ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
-                    //LoadSubTextParts = true
-                };
-
-                tx.Load(templatePath, TXTextControl.StreamType.WordprocessingML, loadSettings);
-
-                using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
-                {
-                    mailMerge.MergeObject(order);
-                }
-
-                tx.Save(outputPath, TXTextControl.StreamType.MSWord);
-            }
+            tx.Save(outputPath, StreamType.MSWord);
         }
+
         public IActionResult Privacy()
         {
             return View();
@@ -287,5 +299,11 @@ namespace editor_demo.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+        // Request models
+    public class MailMergeRequest
+    {
+        public string DocumentContent { get; set; }
+        public object MergeData { get; set; }
     }
 }
