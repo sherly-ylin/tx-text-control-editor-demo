@@ -34,18 +34,18 @@ namespace editor_demo.Controllers
 
                     tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, ls);
 
-                    // string mergedDoc = "";
-                    // mergedDoc = MergeData(tx);
-                    // // Pass the document content to the view
-                    // ViewBag.TemplateDocument = mergedDoc;
-                    // ViewBag.TemplateLoaded = true;
-
-                    // Convert to format that can be loaded in the editor
-                    string documentContent = "";
-                    tx.Save(out documentContent, StringStreamType.HTMLFormat);
+                    string mergedDoc = "";
+                    mergedDoc = MergeData(tx);
                     // Pass the document content to the view
-                    ViewBag.TemplateDocument = documentContent;
+                    ViewBag.TemplateDocument = mergedDoc;
                     ViewBag.TemplateLoaded = true;
+
+                    // // Convert to format that can be loaded in the editor
+                    // string documentContent = "";
+                    // tx.Save(out documentContent, StringStreamType.HTMLFormat);
+                    // // Pass the document content to the view
+                    // ViewBag.TemplateDocument = documentContent;
+                    // ViewBag.TemplateLoaded = true;
 
                     // // save document as PDF
                     // byte[] document;
@@ -60,9 +60,45 @@ namespace editor_demo.Controllers
             return View();
         }
 
-        // Save the document back to the original file
         [HttpPost]
-        public IActionResult SaveDocument()
+        public IActionResult DownloadDocument(string htmlContent, string format)
+        {
+            try
+            {
+                using (ServerTextControl tx = new ServerTextControl())
+                {
+                    tx.Create();
+                    tx.Load(htmlContent, StringStreamType.HTMLFormat);
+
+                    byte[] fileBytes;
+                    string contentType;
+                    string fileExtension;
+
+                    if (format == "pdf")
+                    {
+                        tx.Save(out fileBytes, BinaryStreamType.AdobePDF);
+                        contentType = "application/pdf";
+                        fileExtension = "pdf";
+                    }
+                    else
+                    {
+                        tx.Save(out fileBytes, BinaryStreamType.WordprocessingML);
+                        contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                        fileExtension = "docx";
+                    }
+                    string fileName = $"document_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                    return File(fileBytes, contentType, $"Order_{fileName}.{fileExtension}");
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Failed to generate document: " + ex.Message);
+            }
+        }
+
+
+        [HttpPost]
+        public IActionResult DownloadOrderDocument(int orderId, string format)
         {
             try
             {
@@ -70,21 +106,42 @@ namespace editor_demo.Controllers
                 {
                     tx.Create();
 
-                    // Get the HTML content from the editor
-                    string htmlContent = Request.Form["textcontrol"];
-
-                    if (string.IsNullOrEmpty(htmlContent))
+                    // Load the template
+                    var loadSettings = new LoadSettings
                     {
-                        return Json(new { success = false, error = "No content to save" });
+                        ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
+                        LoadSubTextParts = true
+                    };
+                    tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, loadSettings);
+
+                    // Merge the data
+                    SNOrder dbOrder = GetOrderFromDb(orderId);
+                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+                    {
+                        mailMerge.FormFieldMergeType = FormFieldMergeType.None;
+                        mailMerge.MergeObject(dbOrder);
                     }
 
-                    // Load the HTML content into ServerTextControl
-                    tx.Load(htmlContent, StringStreamType.HTMLFormat);
+                    string fileName;
+                    string contentType;
+                    byte[] fileBytes;
 
-                    // Save back to the original template file
-                    tx.Save("Documents/output.docx", StreamType.WordprocessingML);
+                    if (format.ToLower() == "pdf")
+                    {
+                        // Save as PDF
+                        tx.Save(out fileBytes, BinaryStreamType.AdobePDF);
+                        fileName = $"Order_{orderId}_{DateTime.Now:yyyyMMdd_HHmmss}.pdf";
+                        contentType = "application/pdf";
+                    }
+                    else // DOCX
+                    {
+                        // Save as DOCX
+                        tx.Save(out fileBytes, BinaryStreamType.WordprocessingML);
+                        fileName = $"Order_{orderId}_{DateTime.Now:yyyyMMdd_HHmmss}.docx";
+                        contentType = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+                    }
 
-                    return Json(new { success = true, message = "Document saved successfully!" });
+                    return File(fileBytes, contentType, fileName);
                 }
             }
             catch (Exception ex)
@@ -157,35 +214,6 @@ namespace editor_demo.Controllers
 
             return order;
         }
-
-
-        // private Order GetSampleData()
-        // {
-        //     return new Order
-        //     {
-        //         CustomerName = "John Doe",
-        //         ShippingAddress = "123 Main St., Springfield, IL 62701",
-        //         OrderDate = DateTime.Parse("2025-06-13"),
-
-        //         OrderItems = new List<OrderItem>
-        //             {
-        //                 new OrderItem
-        //                 {
-        //                     ProductName = "Widget",
-        //                     Quantity = 2,
-        //                     Price = 45.00m,
-        //                     Total = 90.00m
-        //                 },
-        //                 new OrderItem
-        //                 {
-        //                     ProductName = "Gadget",
-        //                     Quantity = 1,
-        //                     Price = 78.45m,
-        //                     Total = 78.45m
-        //                 }
-        //             }
-        //     };
-        // }
         public string MergeData(ServerTextControl tx)
         {
             using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
@@ -206,7 +234,7 @@ namespace editor_demo.Controllers
         }
 
         [HttpPost]
-        public IActionResult PerformMailMerge([FromBody] MailMergeRequest request)
+        public IActionResult MergeOrderData(int orderId)
         {
             try
             {
@@ -214,25 +242,26 @@ namespace editor_demo.Controllers
                 {
                     tx.Create();
 
-                    // Load the current document from the editor
-                    if (!string.IsNullOrEmpty(request.DocumentContent))
+                    // Load the template
+                    var loadSettings = new LoadSettings
                     {
-                        tx.Load(request.DocumentContent, StringStreamType.HTMLFormat);
-                        Console.WriteLine("Document loaded successfully.");
-                        Console.WriteLine(request.DocumentContent);
-                    }
-                    else
-                    {
-                        // Load template if no document content provided
-                        LoadSettings ls = new LoadSettings()
-                        {
-                            ApplicationFieldFormat = ApplicationFieldFormat.MSWord
-                        };
-                        tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, ls);
-                    }
-                    string mergedDocument = MergeData(tx);
+                        ApplicationFieldFormat = ApplicationFieldFormat.MSWord,
+                        LoadSubTextParts = true
+                    };
+                    tx.Load("Documents/template_order.docx", StreamType.WordprocessingML, loadSettings);
 
-                    return Json(new { success = true, document = mergedDocument });
+                    // Merge the data
+                    SNOrder dbOrder = GetOrderFromDb(orderId);
+                    using (MailMerge mailMerge = new MailMerge { TextComponent = tx })
+                    {
+                        mailMerge.FormFieldMergeType = FormFieldMergeType.None;
+                        mailMerge.MergeObject(dbOrder);
+                    }
+
+                    // Return merged HTML to update editor
+                    string mergedHtml = "";
+                    tx.Save(out mergedHtml, StringStreamType.HTMLFormat);
+                    return Json(new { success = true, mergedHtml });
                 }
             }
             catch (Exception ex)
@@ -240,6 +269,8 @@ namespace editor_demo.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
+
+
         [HttpPost]
         public IActionResult GenerateDBOrderDocument(int orderId, string templatePath, string outputPath)
         {
@@ -284,10 +315,6 @@ namespace editor_demo.Controllers
                 return Json(new { success = false, error = ex.Message });
             }
         }
-        static void DownloadDocument(ServerTextControl tx, string outputPath)
-        {
-            tx.Save(outputPath, StreamType.MSWord);
-        }
 
         public IActionResult Privacy()
         {
@@ -300,10 +327,5 @@ namespace editor_demo.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
-        // Request models
-    public class MailMergeRequest
-    {
-        public string DocumentContent { get; set; }
-        public object MergeData { get; set; }
-    }
+
 }

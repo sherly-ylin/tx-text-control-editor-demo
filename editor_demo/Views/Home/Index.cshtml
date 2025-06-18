@@ -10,13 +10,11 @@
 
     <div class="tx-container">
 
-        @{
-            // string jsonData = System.IO.File.ReadAllText(Server.MapPath("~/App_Data/Documents/acme_data.json"));
-        }
         @if (ViewBag.TemplateLoaded == true)
         {
-            @Html.TXTextControl().TextControl().LoadText(ViewBag.TemplateDocument, TXTextControl.Web.StringStreamType.HTMLFormat).Render()
-        }
+            @Html.TXTextControl().TextControl().LoadText(ViewBag.TemplateDocument,
+            TXTextControl.Web.StringStreamType.HTMLFormat).Render()
+                }
         else
         {
             <div class="alert alert-danger m-3">
@@ -29,176 +27,118 @@
 
     <div class="mt-3">
         <div class="">
-            <button onclick="saveDocument()" class="btn btn-primary">
-                <i class=""></i> Save Document
-            </button>
-            <button onclick="showSaveAsDialog()" class="btn btn-secondary">
-                <i class=""></i> Save As...
-            </button>
-            <button onclick="performMailMerge()" class="btn btn-success">
-                <i class=""></i> Load Order 7262
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <i class=""></i> Download
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#" onclick="downloadDocument('pdf')">Download as PDF</a></li>
+                    <li><a class="dropdown-item" href="#" onclick="downloadDocument('docx')">Download as DOCX</a></li>
+                </ul>
+            </div>
+            <button onclick="mergeOrder(7262)" class="btn btn-success">
+                <i class=""></i> Load Order
             </button>
             <button onclick="reset()" class="btn btn-warning">
                 <i class=""></i> Reset Template
             </button>
-            @* <button onclick="generateDBOrderDocument(7262, true)" class="btn btn-outline-warning">
-                <i class="fas fa-undo"></i> Load Order by bundle
-            </button> *@
+
         </div>
     </div>
     <div id="status-messages" class="mt-3"></div>
 </div>
 
-@* GenerateOrderDocument(order, "Documents/template.docx", "Documents/output.pdf"); *@
 <script>
-     function performMailMerge() {
-        // Get current document content from the editor
-        TXTextControl.saveDocument(TXTextControl.streamType.HTMLFormat, function(e) {
-            const requestData = {
-                DocumentContent: e.data
-            };
-            
-            fetch('/Home/PerformMailMerge', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(requestData)
-            })
+    function mergeOrder(orderId) {
+        fetch('/Home/MergeOrderData', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: `orderId=${orderId}`
+        })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Load merged document back into editor
-                    console.log(data.document);
-                    TXTextControl.loadDocument(TXTextControl.streamType.HTMLFormat, data.document);
-                    showMessage('Mail merge completed successfully! Template fields have been replaced with actual data.', 'success');
+                    // Update editor with merged HTML
+                    console.log(data.mergedHtml);
+                    TXTextControl.loadDocument(data.mergedHtml, TXTextControl.StreamType.HTMLFormat);
 
                 } else {
-                    showMessage('Error during mail merge: ' + data.error, 'error');
-
+                    alert("Error: " + data.error);
                 }
-            })
-            .catch(error => {
-                showMessage('Error: ' + error.message, 'error');
             });
-        });
-    }
-    function generateDBOrderDocument(orderId, byBundle = false) {
-        showMessage('Generating document...', 'info');
-
-        fetch('/Home/GenerateDBOrderDocument', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ orderId: orderId, byBundle: byBundle})
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showMessage(data.message, 'success');
-                // Optionally redirect to the generated document
-                @* window.location.href = data.filePath; *@
-            } else {
-                showMessage('Error generating document: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
-        });
     }
     function resetToTemplate() {
         showMessage('Resetting to original template...', 'info');
         window.location.reload();
     }
-    // Function to save the document to the original file
-    function saveDocument() {
-        showMessage('Saving document...', 'info');
+    function downloadDocument(format) {
+        TXTextControl.save(TXTextControl.StreamType.HTMLFormat, function (htmlContent) {
+            const formData = new FormData();
+            formData.append("htmlContent", htmlContent.data);
+            formData.append("format", format);
 
-        // Get the content from TX Text Control
-        var content = TXTextControl.getHTML();
-
-        fetch('/Home/SaveDocument', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ content: content })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showMessage(data.message, 'success');
-            } else {
-                showMessage('Error saving document: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
-        });
-    }
-
-    // Function to show the Save As dialog
-    function showSaveAsDialog() {
-        $('#saveAsModal').modal('show');
-        $('#fileName').val(''); // Clear the input
-    }
-
-    // Function to save the document with a new name
-    function saveDocumentAs() {
-        var fileName = document.getElementById('fileName').value.trim();
-
-        if (!fileName) {
-            showMessage('Please enter a filename', 'error');
-            return;
-        }
-
-        if (!fileName.endsWith('.docx')) {
-            fileName += '.docx';
-        }
-
-        showMessage('Saving document as ' + fileName + '...', 'info');
-
-        // Get the content from TX Text Control
-        var content = TXTextControl.getHTML();
-
-        fetch('/Home/SaveDocumentAs', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                content: content,
-                fileName: fileName
+            fetch('/Home/DownloadDocument', {
+                method: 'POST',
+                body: formData
             })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                showMessage(data.message, 'success');
-                $('#saveAsModal').modal('hide');
-            } else {
-                showMessage('Error saving document: ' + data.error, 'error');
-            }
-        })
-        .catch(error => {
-            showMessage('Error: ' + error.message, 'error');
+                .then(response => response.blob())
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = `Order.${format}`;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                });
         });
     }
 
+    // Function to download order document directly
+    function downloadOrderDocument(orderId, format) {
+        showMessage(`Preparing Order ${format.toUpperCase()} download...`, 'info');
+
+        // Create a form and submit it to trigger file download
+        var form = document.createElement('form');
+        form.method = 'POST';
+        form.action = '/Home/DownloadOrderDocument';
+        form.style.display = 'none';
+
+        var orderIdInput = document.createElement('input');
+        orderIdInput.type = 'hidden';
+        orderIdInput.name = 'orderId';
+        orderIdInput.value = orderId;
+
+        var formatInput = document.createElement('input');
+        formatInput.type = 'hidden';
+        formatInput.name = 'format';
+        formatInput.value = format;
+
+        form.appendChild(orderIdInput);
+        form.appendChild(formatInput);
+        document.body.appendChild(form);
+
+        form.submit();
+        document.body.removeChild(form);
+
+        showMessage(`Order ${format.toUpperCase()} download started!`, 'success');
+    }
     function showMessage(message, type = 'info') {
-        const alertClass = type === 'error' ? 'alert-danger' : 
-                          type === 'success' ? 'alert-success' : 'alert-info';
-        
+        const alertClass = type === 'error' ? 'alert-danger' :
+            type === 'success' ? 'alert-success' : 'alert-info';
+
         const html = `<div class="alert ${alertClass} alert-dismissible fade show" role="alert">
                         ${message}
                         <button type="button" class="close" data-dismiss="alert">
                             <span>&times;</span>
                         </button>
                       </div>`;
-        
+
         document.getElementById('status-messages').innerHTML = html;
-        
+
         // Auto-hide after 5 seconds
         setTimeout(() => {
             const alert = document.querySelector('.alert');
